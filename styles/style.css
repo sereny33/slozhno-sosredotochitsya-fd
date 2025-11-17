@@ -2,4 +2,101 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--bg-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: var(--bg-color);
+  padding: 10px;
+  font-family: var(--main-font);
+  font-size: 18px;
 }
+
+.header {
+  block-size: 100vh;
+  min-block-size: 668px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.header__theme-menu {
+  grid-column: 2;
+  justify-self: end;
+  align-self: center;
+}
+
+.header__title {
+  grid-column: span 2;
+  grid-row: 2 / 3;
+  color: var(--h1-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 83%;
+}
+
+.header__title-aligned {
+  display: block;
+}
+
+.header__description {
+  grid-column: span 2;
+  grid-row: 3 / auto;
+  align-self: center;
+  font-weight: 700;
+  line-height: 1.3em;
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--title-decor-text-color);
+}
+
+.header_decoration {
+  position: absolute;
+  inset-inline-end: 40px;
+  inset-block-start: 10px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  line-height: 1.4em;
+}
+
+.header_decoration::after {
+  content: '';
+  display: inline-block;
+  align-items: center;
+  margin-inline-start: 10px;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background-color: var(--accent-color);
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  inset-inline-end: 0px;
+  inset-block-start: 0px;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-inline-end: 1px solid var(--accent-color);
+  border-block-start: 1px solid var(--accent-color);
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0px;
+  inset-block-end: 0px;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-inline-start: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--accent-color);
+}
+
+

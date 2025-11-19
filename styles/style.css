@@ -2,6 +2,10 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex-direction: column;
   background-image: var(--bg-image);
   background-position: center;
   background-size: cover;
@@ -10,6 +14,7 @@
   padding: 10px;
   font-family: var(--main-font);
   font-size: 18px;
+  line-height: 1.3em;
 }
 
 .header {
@@ -51,6 +56,12 @@
 .title-decor {
   background-color: var(--accent-color);
   color: var(--title-decor-text-color);
+}
+
+.title-decor-regular {
+  background-color: var(--accent-color);
+  color: var(--title-decor-text-color);
+  font-weight: 400;
 }
 
 .header_decoration {
@@ -98,5 +109,28 @@
   border-inline-start: 1px solid var(--accent-color);
   border-block-end: 1px solid var(--accent-color);
 }
+
+
+.section__heading {
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.accent-heading {
+  color: var(--h3-color);
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.card__description {
+  color: #F1B2CE;
+}
+
+
 
 

@@ -2,10 +2,10 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(375px, 768px);
+  justify-content: center;
   gap: 40px;
-  flex-direction: column;
   background-image: var(--bg-image);
   background-position: center;
   background-size: cover;
@@ -110,6 +110,9 @@
   border-block-end: 1px solid var(--accent-color);
 }
 
+.content__section:not(:last-of-type) {
+  margin-bottom: 50px;
+}
 
 .section__heading {
   color: var(--accent-color);
@@ -130,6 +133,21 @@
 .card__description {
   color: #F1B2CE;
 }
+
+.description-link {
+  text-decoration: none;
+  text-shadow: 2px 1px 0 var(--accent-color);
+  outline: none;
+}
+
+.description-link:hover {
+  border-bottom: 1px solid #F1B2CE;
+}
+
+.description-link:focus-visible {
+  border: 1px solid #F1B2CE;
+}
+
 
 
 

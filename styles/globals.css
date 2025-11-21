@@ -41,3 +41,7 @@ a {
   font-size: inherit;
   line-height: inherit;
 }
+
+button:focus {
+  outline: none;
+}

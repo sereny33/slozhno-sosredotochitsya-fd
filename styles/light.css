@@ -21,6 +21,7 @@
   --button-color-hover: #32312d40;
 }
 
+/* Убирает декоративный элемент REC */
 :root.theme-light .header__decoration {
   display: none;
 }

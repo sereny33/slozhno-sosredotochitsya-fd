@@ -17,11 +17,11 @@
   background-attachment: fixed;
 }
 
+/* Стили шапки */
 .header {
   position: relative;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr min-content 1fr;
   block-size: 100vh;
   min-block-size: 668px;
 }
@@ -43,12 +43,12 @@
   border: none;
   padding: 0 13px;
   color: var(--button-color);
+  text-transform: lowercase;
   background: transparent;
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  text-transform: lowercase;
 }
 
 .header__theme-menu-button:hover {
@@ -63,7 +63,6 @@
   border: 1px solid var(--button-color);
   pointer-events: none;
 }
-
 
 .header__title {
   grid-column: span 2;
@@ -144,15 +143,14 @@
   inset-block-end: 0px;
 }
 
+/* Стили основного контента */
 .content {
   display: grid;
-  grid-template-columns: minmax(min-content, max-content);
   gap: 20px;
 }
 
 .content__section {
   display: grid;
-  grid-template-columns: minmax(min-content, max-content);
   gap: 20px;
 }
 
@@ -166,7 +164,6 @@
 
 .section__list {
   display: grid;
-  grid-template-columns: minmax(min-content, max-content);
   gap: 20px;
 }
 
@@ -176,7 +173,6 @@
 
 .card {
   display: grid;
-  grid-template-columns: minmax(min-content, max-content);
   gap: 10px;
 }
 
@@ -199,7 +195,6 @@
 }
 
 .gallery {
-  grid-template-columns: minmax(min-content, max-content);
   gap: 10px;
 }
 
@@ -207,6 +202,7 @@
   width: 100%;
 }
 
+/* Стили футера */
 .footer {
   position: relative;
   display: flex;
@@ -224,6 +220,7 @@
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
+/* Стили для экранов планшета */
 @media (width >= 768px) {
   .page {
     padding: 20px;
@@ -246,7 +243,6 @@
 
   .header__description {
     grid-column: 2 / 3;
-
   }
 
   .content__section {
@@ -254,10 +250,10 @@
     grid-template-columns: 1fr 2fr;
     gap: 20px;
   }
-  
+
   .content__section:not(:last-of-type) {
-  margin-block-end: 60px;
-}
+    margin-block-end: 60px;
+  }
   .section__heading {
     grid-column: 1;
   }
@@ -312,8 +308,8 @@
   }
 }
 
+/* Стили для экранов десктопа */
 @media (width >= 1024px) {
-
   .header__title {
     margin: -20px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);

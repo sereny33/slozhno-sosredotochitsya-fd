@@ -9,20 +9,37 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-  --main-font: 'IBM Plex mono', sans-serif;
   --bg-image: url(../images/cover-image-light.png);
-  --bg-color: #FFF1F7;
-  --h1-color: #FFC2E6;
+  --bg-color: #fff1f7;
+  --h1-color: #ffc2e6;
   --h2-color: #353430;
   --h3-color: #353430;
   --main-text-color: #353430;
   --title-decor-text-color: #353430;
-  --accent-color: #FF8DCB;
+  --accent-color: #ff8dcb;
   --button-color: #353430;
-  --button-color-hover: #32312D40
-
+  --button-color-hover: #32312d40;
 }
 
-:root:not(.theme-dark) .header_decoration {
+:root.theme-light .header__decoration {
+  display: none;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-image: url(../images/cover-image-light.png);
+    --bg-color: #fff1f7;
+    --h1-color: #ffc2e6;
+    --h2-color: #353430;
+    --h3-color: #353430;
+    --main-text-color: #353430;
+    --title-decor-text-color: #353430;
+    --accent-color: #ff8dcb;
+    --button-color: #353430;
+    --button-color-hover: #32312d40;
+  }
+
+  :root.theme-auto .header__decoration {
     display: none;
-  } 
+  }
+}

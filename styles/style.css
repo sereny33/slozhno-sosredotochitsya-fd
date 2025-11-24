@@ -15,6 +15,7 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  overflow: auto;
 }
 
 /* Стили шапки */
@@ -23,9 +24,9 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(3, min-content);
+  padding-block-end: 10px;
   block-size: 100vh;
   min-block-size: 668px;
-  padding-block-end: 10px;
 }
 
 .header__theme-menu {
@@ -55,7 +56,7 @@
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid var(--button-color-hover);
+  outline: 1px solid var(--button-color-hover);
 }
 
 .header__theme-menu-button:focus-visible {
@@ -83,9 +84,9 @@
 .header__description {
   grid-column: span 2;
   align-self: center;
+  margin: 60px 0;
   font-weight: 700;
   line-height: 1.3em;
-  margin: 60px 0;
 }
 
 .title-decor {
@@ -201,14 +202,13 @@
 
 /* Стили футера */
 .footer {
-  padding-block-start: 10px;
   position: relative;
   display: grid;
-  block-size: 100vh;
-  min-block-size: 668px;
   justify-content: center;
   align-items: center;
-
+  padding-block-start: 10px;
+  block-size: 100vh;
+  min-block-size: 668px;
 }
 
 .footer__title {
@@ -246,8 +246,8 @@
 /* Стили для экранов планшета */
 @media (width >= 768px) {
   .page {
+    gap: 40px;
     padding: 20px;
-    gap: 40px
   }
 
   .header {
@@ -269,6 +269,7 @@
   }
 
   .header__description {
+    grid-column: 2 / 3;
     margin: 160px 0;
   }
 
@@ -276,12 +277,8 @@
     display: initial;
   }
 
-  .header__description {
-    grid-column: 2 / 3;
-  }
-
   .content {
-    gap: 80px
+    gap: 80px;
   }
 
   .content__section {
@@ -297,6 +294,8 @@
   .section__list {
     grid-column: 2 / 3;
   }
+
+
 
   .column-style .section__heading {
     grid-column: 1 / 2;
@@ -346,7 +345,7 @@
 
 /* Стили для экранов десктопа */
 @media (width >= 1024px) {
- .header {
+  .header {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -354,7 +353,6 @@
     block-size: 100vh;
     min-block-size: 668px;
   }
-}
 
   .header__title {
     margin: 45px 0 0 -20px;
@@ -370,7 +368,6 @@
     justify-self: center;
     align-self: flex-start;
     margin-block-start: 0;
-    
   }
 
   .header__theme-menu-button {
@@ -384,9 +381,13 @@
     gap: 10px;
   }
 
-   .content__section .column-style {
+  .column-style .section__list {
+    grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .content__section .column-style {
     grid-template-columns: repeat(auto-fill, 1fr);
-  } 
+  }
 
   .column-style .section__list {
     grid-auto-flow: column;
@@ -395,4 +396,4 @@
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
-
+}

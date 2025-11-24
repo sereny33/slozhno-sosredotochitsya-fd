@@ -238,10 +238,6 @@
     margin: 170px 0;
   }
 
-  .header__theme-menu-list {
-    gap: 12px;
-  }
-
   .header__title {
     margin: 5px -20px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -261,9 +257,7 @@
   }
 
   .content__section {
-    display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 20px;
   }
 
   .content__section-heading {
@@ -349,7 +343,6 @@
   }
 
   .header__theme-menu-list {
-    display: flex;
     flex-direction: row;
     gap: 10px;
   }

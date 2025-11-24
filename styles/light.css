@@ -19,6 +19,7 @@
   --accent-color: #ff8dcb;
   --button-color: #353430;
   --button-color-hover: #32312d40;
+  --corner-color: #353430;
 }
 
 /* Убирает декоративный элемент REC */
@@ -38,9 +39,10 @@
     --accent-color: #ff8dcb;
     --button-color: #353430;
     --button-color-hover: #32312d40;
+    --corner-color: #353430;
   }
 
-  :root.theme-auto .header__decoration {
-    display: none;
+  .header__decoration {
+    display: var(--display-rec);
   }
 }

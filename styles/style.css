@@ -5,7 +5,7 @@
   display: grid;
   grid-template-columns: minmax(min-content, max-content);
   justify-content: center;
-  gap: 40px;
+  gap: 30px;
   padding: 10px;
   font-family: var(--main-font);
   font-size: 18px;
@@ -22,14 +22,17 @@
   position: relative;
   display: grid;
   grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(3, min-content);
   block-size: 100vh;
   min-block-size: 668px;
+  padding-block-end: 10px;
 }
 
 .header__theme-menu {
-  grid-column: 2;
+  grid-column: 2 / 3;
   justify-self: end;
   align-self: center;
+  margin: 65px 0;
 }
 
 .header__theme-menu-list {
@@ -66,7 +69,6 @@
 
 .header__title {
   grid-column: span 2;
-  grid-row: 2 / 3;
   color: var(--h1-color);
   font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
@@ -83,6 +85,7 @@
   align-self: center;
   font-weight: 700;
   line-height: 1.3em;
+  margin: 60px 0;
 }
 
 .title-decor {
@@ -117,8 +120,7 @@
   background-color: var(--accent-color);
 }
 
-.header::before,
-.footer::before {
+.header::before {
   content: "";
   position: absolute;
   display: inline-block;
@@ -130,8 +132,7 @@
   inset-block-start: 0px;
 }
 
-.header::after,
-.footer::after {
+.header::after {
   content: "";
   position: absolute;
   display: inline-block;
@@ -140,22 +141,18 @@
   border-inline-start: 1px solid var(--accent-color);
   border-block-end: 1px solid var(--accent-color);
   inset-inline-start: 0px;
-  inset-block-end: 0px;
+  inset-block-end: 20px;
 }
 
 /* Стили основного контента */
 .content {
   display: grid;
-  gap: 20px;
+  gap: 50px;
 }
 
 .content__section {
   display: grid;
   gap: 20px;
-}
-
-.content__section:not(:last-of-type) {
-  margin-block-end: 30px;
 }
 
 .section__heading {
@@ -204,12 +201,14 @@
 
 /* Стили футера */
 .footer {
+  padding-block-start: 10px;
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  block-size: 100vh;
+  min-block-size: 668px;
   justify-content: center;
   align-items: center;
-  block-size: 100vh;
+
 }
 
 .footer__title {
@@ -220,21 +219,57 @@
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
+.footer::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-inline-end: 1px solid var(--accent-color);
+  border-block-start: 1px solid var(--accent-color);
+  inset-inline-end: 0px;
+  inset-block-start: 20px;
+}
+
+.footer::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-inline-start: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--accent-color);
+  inset-inline-start: 0px;
+  inset-block-end: 0px;
+}
+
 /* Стили для экранов планшета */
 @media (width >= 768px) {
   .page {
     padding: 20px;
+    gap: 40px
   }
 
   .header {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr min-content 1fr;
+  }
+
+  .header::after {
+    inset-block-end: 40px;
+  }
+
+  .header__theme-menu {
+    margin: 9.6em 0;
   }
 
   .header__title {
-    margin: -20px;
+    margin: 5px -20px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__description {
+    margin: 160px 0;
   }
 
   .header__title-aligned {
@@ -245,15 +280,16 @@
     grid-column: 2 / 3;
   }
 
+  .content {
+    gap: 80px
+  }
+
   .content__section {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
   }
 
-  .content__section:not(:last-of-type) {
-    margin-block-end: 60px;
-  }
   .section__heading {
     grid-column: 1;
   }
@@ -310,20 +346,36 @@
 
 /* Стили для экранов десктопа */
 @media (width >= 1024px) {
+ .header {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    block-size: 100vh;
+    min-block-size: 668px;
+  }
+}
+
   .header__title {
-    margin: -20px;
+    margin: 45px 0 0 -20px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__description {
+    margin: 0 0 110px 0;
   }
 
   .header__theme-menu {
     grid-column: 1/3;
     justify-self: center;
     align-self: flex-start;
+    margin-block-start: 0;
+    
   }
 
   .header__theme-menu-button {
     margin: 0;
-    padding: 0 25px;
+    padding: 0 13px;
   }
 
   .header__theme-menu-list {
@@ -332,6 +384,10 @@
     gap: 10px;
   }
 
+   .content__section .column-style {
+    grid-template-columns: repeat(auto-fill, 1fr);
+  } 
+
   .column-style .section__list {
     grid-auto-flow: column;
   }
@@ -339,4 +395,4 @@
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
-}
+

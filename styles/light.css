@@ -20,11 +20,7 @@
   --button-color: #353430;
   --button-color-hover: #32312d40;
   --corner-color: #353430;
-}
-
-/* Убирает декоративный элемент REC */
-:root.theme-light .header__decoration {
-  display: none;
+  --display-rec: none;
 }
 
 @media (prefers-color-scheme: light) {
@@ -40,9 +36,6 @@
     --button-color: #353430;
     --button-color-hover: #32312d40;
     --corner-color: #353430;
-  }
-
-  .header__decoration {
-    display: var(--display-rec);
+    --display-rec: none;
   }
 }

@@ -19,4 +19,12 @@
   --accent-color: #ff0070;
   --button-color: #ff0070;
   --button-color-hover: #ff007066;
+  --corner-color: #ff0070;
+  --display-rec: inline-block;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root.theme-auto {
+    --display-rec: inline-block;
+  }
 }
